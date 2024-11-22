@@ -1,5 +1,5 @@
 {% set name = "lagrange-ng" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/computations/lagrange-ng/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: db4cf1d634c7891041f1556bc02135faf3ed7d0f17dc57adf2f55840f1728f96
+  sha256: f3a83d356e168e25fc5983c13851e1760b4dd4222625a699496d8b644de59bac
 
 build:
   skip: true  # [win]
@@ -16,6 +16,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - cmake
     - make
     - openblas
